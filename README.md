@@ -13,7 +13,9 @@ None.
 Role Variables
 --------------
 
-None.
+* github_account: "scorpionresponse"
+
+* dev_directory: "~/development"
 
 Dependencies
 ------------
