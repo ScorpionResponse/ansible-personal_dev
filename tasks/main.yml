@@ -10,3 +10,5 @@
 
 - name: Execute install script
   shell: "{{ dev_directory }}/dotfiles/install_dotfiles.sh"
+  args:
+    creates: ~/.vimrc
