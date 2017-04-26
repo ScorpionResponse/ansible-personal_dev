@@ -1,4 +1,18 @@
 ---
+- name: Install Vim (Yum)
+  yum: 
+    name: vim-enhanced.x86_64
+    state: present
+    update_cache: yes
+  when: ansible_pkg_mgr == 'yum'
+
+- name: Install Vim (Apt)
+  apt: 
+    pkg: vim
+    state: present
+    update_cache: yes
+  when: ansible_pkg_mgr == 'apt'
+
 - name: Create Development Directory
   file: path={{ dev_directory }} state=directory
 
