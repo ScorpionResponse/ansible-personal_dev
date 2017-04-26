@@ -1,5 +1,7 @@
 ---
 - name: Install Vim (Yum)
+  become: yes
+  become_user: root
   yum: 
     name: vim-enhanced.x86_64
     state: present
@@ -7,6 +9,8 @@
   when: ansible_pkg_mgr == 'yum'
 
 - name: Install Vim (Apt)
+  become: yes
+  become_user: root
   apt: 
     pkg: vim
     state: present
