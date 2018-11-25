@@ -2,20 +2,28 @@
 - name: Install Vim (Yum)
   become: yes
   become_user: root
-  yum: 
-    name: vim-enhanced.x86_64
+  yum:
+    name: {{ item }}
     state: present
     update_cache: yes
   when: ansible_pkg_mgr == 'yum'
+  with_items:
+    - neovim
+    - vim-enhanced.x86_64
 
 - name: Install Vim (Apt)
   become: yes
   become_user: root
-  apt: 
-    pkg: vim
+  apt:
+    pkg: {{ item }}
     state: present
     update_cache: yes
   when: ansible_pkg_mgr == 'apt'
+  with_items:
+    - neovim
+    - python3-neovim
+    - shellcheck
+    - vim
 
 - name: Create Development Directory
   file: path={{ dev_directory }} state=directory
