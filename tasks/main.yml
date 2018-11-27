@@ -3,7 +3,7 @@
   become: yes
   become_user: root
   yum:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
     update_cache: yes
   when: ansible_pkg_mgr == 'yum'
@@ -15,7 +15,7 @@
   become: yes
   become_user: root
   apt:
-    pkg: {{ item }}
+    pkg: "{{ item }}"
     state: present
     update_cache: yes
   when: ansible_pkg_mgr == 'apt'
