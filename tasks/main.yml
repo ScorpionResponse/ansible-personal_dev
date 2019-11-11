@@ -26,7 +26,6 @@
   when: ansible_pkg_mgr == 'apt'
   with_items:
     - neovim
-    - pynvim
     - shellcheck
     - vim
 
