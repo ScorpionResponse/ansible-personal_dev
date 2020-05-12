@@ -10,12 +10,6 @@
   with_items:
     - vim-enhanced.x86_64
 
-- name: Add neovim ppa 
-  become: yes
-  become_user: root
-  apt_repository: repo="ppa:neovim-ppa/stable" state=present
-  when: ansible_pkg_mgr == 'apt'
-
 - name: Install Vim (Apt)
   become: yes
   become_user: root
