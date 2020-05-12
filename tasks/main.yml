@@ -13,7 +13,7 @@
 - name: Add neovim ppa 
   become: yes
   become_user: root
-  apt_repository: repo="ppa:neovim-ppa/unstable" state=present
+  apt_repository: repo="ppa:neovim-ppa/stable" state=present
   when: ansible_pkg_mgr == 'apt'
 
 - name: Install Vim (Apt)
